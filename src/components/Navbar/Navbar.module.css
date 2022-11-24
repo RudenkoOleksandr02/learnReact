@@ -1,0 +1,9 @@
+.nav {
+  grid-area: n;
+  background-color: burlywood;
+}
+.friends {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}

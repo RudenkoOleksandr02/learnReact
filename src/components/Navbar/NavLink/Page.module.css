@@ -1,0 +1,11 @@
+.item {
+    color: #fff;
+    text-decoration: none;
+}
+.active {
+    color: gold;
+    text-decoration: none;
+}
+.navLink {
+    padding: 5px 10px;
+}
