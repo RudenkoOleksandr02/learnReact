@@ -6,15 +6,17 @@ import Post from './Post/Post.jsx';
 const MyPosts = (props) => {
     let newPost = React.createRef();
     const addPost = () => {
-        let text = newPost.current.value;
-        props.addPost(text)
-        newPost.current.value = '';
+        props.addPost();
+    }
+    const changePostText = () => {
+        let text = newPost.current.value
+        props.updateNewPostText(text);
     }
 
     return <div>
         My posts
         <div>
-            <textarea ref={newPost}></textarea>
+            <textarea ref={newPost} value={props.newPostText} onChange={changePostText}></textarea>
             <button onClick={addPost}>ADD</button>
         </div>
         <div className={s.posts}>
