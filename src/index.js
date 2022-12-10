@@ -3,9 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import store from "./redux/state";
 import App from "./App";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
-const rerenderEntireTree = (state) => {
-    ReactDOM.render(<App state={state} addPost={store.addPost} updateNewPostText={store.updateNewPostText} addMessage={store.addMessage} updateNewMessageText={store.updateNewMessageText}/>, document.getElementById('root'));
+let rerenderEntireTree = (state) => {
+    ReactDOM.render(
+        <BrowserRouter>
+            <App state={state}
+                 addPost={store.addPost.bind(store)}
+                 updateNewPostText={store.updateNewPostText.bind(store)}
+                 addMessage={store.addMessage.bind(store)}
+                 updateNewMessageText={store.updateNewMessageText.bind(store)}/>
+        </BrowserRouter>, document.getElementById('root'));
 }
 
 rerenderEntireTree(store.getState());

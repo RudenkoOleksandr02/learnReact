@@ -42,25 +42,28 @@ const store = {
         return this._state;
     },
     addPost() {
-        let text = this._state.profilePage.newPostText;
-        let post = {id: this._state.profilePage.posts.length + 1, message: text, likesCount: 0}
+        let post = {
+            id: this._state.profilePage.posts.length + 1,
+            message: this._state.profilePage.newPostText,
+            likesCount: 0
+        };
         this._state.profilePage.posts.push(post);
         this._state.profilePage.newPostText = '';
-        this._callSubscriber();
+        this._callSubscriber(this._state);
     },
     updateNewPostText(text) {
         this._state.profilePage.newPostText = text;
-        this._callSubscriber();
+        this._callSubscriber(this._state);
     },
     addMessage()  {
         let text = this._state.dialogsPage.newMessageText;
         this._state.dialogsPage.messages.push({id: this._state.dialogsPage.messages + 1, message: text});
         this._state.dialogsPage.newMessageText = '';
-        this._callSubscriber();
+        this._callSubscriber(this._state);
     },
     updateNewMessageText(text) {
         this._state.dialogsPage.newMessageText = text;
-        this._callSubscriber();
+        this._callSubscriber(this._state);
     },
     _callSubscriber() {
         console.log(true);
