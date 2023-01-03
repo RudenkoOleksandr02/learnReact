@@ -7,9 +7,10 @@ let initialState = {
     navLinks: [
         {id: 1, path: '/profile', title: 'Profile'},
         {id: 2, path: '/dialogs', title: 'Messages'},
-        {id: 3, path: '/news', title: 'News'},
-        {id: 4, path: '/music', title: 'Music'},
-        {id: 5, path: '/settings', title: 'Settings'},
+        {id: 3, path: '/users', title: 'Users'},
+        {id: 4, path: '/news', title: 'News'},
+        {id: 5, path: '/music', title: 'Music'},
+        {id: 6, path: '/settings', title: 'Settings'},
     ]
 };
 
