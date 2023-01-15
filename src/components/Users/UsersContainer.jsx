@@ -32,7 +32,6 @@ class UsersContainer extends React.Component {
     }
 
     render() {
-        console.log({...this.props})
         return <>
             {this.props.isFetching ? <Preloader /> : null}
             <Users {...this.props}

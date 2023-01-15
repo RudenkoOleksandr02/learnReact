@@ -12,20 +12,22 @@ import ProfileContainer from "./components/Profile/ProfileContainer";
 
 const App = () => {
     return (
-            <div className='app-wrapper'>
-                <Header/>
-                <NavbarContainer />
-                <div className={'app-wrapper-content'}>
-                    <Routes>
-                        <Route path='/profile/*' element={<ProfileContainer />}/>
-                        <Route path='/dialogs/*' element={<DialogsContainer />}/>
-                        <Route path='/users' element={<UsersContainer />}/>
-                        <Route path={'/music'} element={<Music />} />
-                        <Route path={'/news'} element={<News /> } />
-                        <Route path={'/settings'} element={<Settings />} />
-                    </Routes>
-                </div>
+        <div className='app-wrapper'>
+            <Header/>
+            <NavbarContainer/>
+            <div className={'app-wrapper-content'}>
+                <Routes>
+                    <Route path='/profile' element={<ProfileContainer/>}>
+                        <Route path={':userId'} element={<ProfileContainer/>}/>
+                    </Route>
+                    <Route path='/dialogs/*' element={<DialogsContainer/>}/>
+                    <Route path='/users' element={<UsersContainer/>}/>
+                    <Route path={'/music'} element={<Music/>}/>
+                    <Route path={'/news'} element={<News/>}/>
+                    <Route path={'/settings'} element={<Settings/>}/>
+                </Routes>
             </div>
+        </div>
     );
 }
 
