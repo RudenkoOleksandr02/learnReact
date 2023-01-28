@@ -24,14 +24,14 @@ export const usersAPI = {
 };
 
 export const profileAPI = {
-    setUser(id) {
+    getUser(id) {
         return instance.get(`profile/${id}`)
             .then(response => response.data)
     }
 }
 
 export const headerAPI = {
-    setAuth() {
+    getAuth() {
         return instance.get(`auth/me`)
             .then(response => response.data)
     }

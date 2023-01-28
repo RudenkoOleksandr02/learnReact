@@ -26,7 +26,9 @@ const Users = (props) =>  {
                                              status={u.status}
                                              location={'u.location'}
                                              id={u.id}
-                                             photos={u.photos.small != null ? u.photos.small : userPhoto}/>)}
+                                             photos={u.photos.small != null ? u.photos.small : userPhoto}
+                                            toggleFollowingProgress={props.toggleFollowingProgress}
+                                            followingInProgress={props.followingInProgress}/>)}
         </div>
 }
 
