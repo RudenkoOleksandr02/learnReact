@@ -46,3 +46,10 @@ export const headerAPI = {
             .then(response => response.data)
     }
 }
+
+export const loginAPI = {
+    authorize(email, password, rememberMe) {
+        return instance.post(`auth/login`, {email, password, rememberMe})
+            .then(response => response.data)
+    }
+}
