@@ -1,0 +1,9 @@
+.formControl {
+    outline: none;
+}
+.formControl.error {
+    border: 2px solid red;
+}
+.messageError {
+    color: red
+}
