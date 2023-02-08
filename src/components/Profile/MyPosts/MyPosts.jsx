@@ -3,7 +3,7 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post.jsx';
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../utils/validate";
-import {FormControl} from "../../common/FormControls/FormControls";
+import {FormControl} from "../../common/FormControls/FormControl";
 const maxLength10 = maxLengthCreator(10);
 
 const MyPostForm = (props) => {
