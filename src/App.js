@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header';
-import {Routes, Route} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
@@ -14,7 +13,6 @@ import Login from "./components/Login/Login";
 import {compose} from "redux";
 import {withRouter} from "./components/common/withRouter/withRouter";
 import {connect} from "react-redux";
-import {getAuth} from "./redux/auth-reducer";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/preloader/Preloader";
 
