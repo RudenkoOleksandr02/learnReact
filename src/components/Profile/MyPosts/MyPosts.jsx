@@ -1,9 +1,9 @@
 import React from 'react';
-import s from './MyPosts.module.css';
 import Post from './Post/Post.jsx';
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../utils/validate";
 import {FormControl} from "../../common/FormControls/FormControl";
+
 const maxLength10 = maxLengthCreator(10);
 
 const MyPostForm = (props) => {
@@ -17,7 +17,8 @@ const MyPostForm = (props) => {
 
 const MyPostReduxForm = reduxForm({form: 'myPost'})(MyPostForm)
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
+    console.log('rerender');
     const onAddPost = (formData) => {
         props.addPost(formData.newPost);
     }
@@ -26,10 +27,11 @@ const MyPosts = (props) => {
         My posts
         <MyPostReduxForm onSubmit={onAddPost}/>
         <div>
-            {props.posts.map(post => <Post key={post.id} message={post.message} likesCount={post.likesCount}/>)}
+            {props.posts.map(post => <Post key={post.id} message={post.message}
+                                           likesCount={post.likesCount}/>)}
         </div>
     </div>
 
-}
+});
 
 export default MyPosts;
