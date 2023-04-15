@@ -1,5 +1,9 @@
 {
   "name": "react-kabzda-1",
+  "jest": {
+    "transformIgnorePatterns": ["node_modules/(?!axios)/"]
+  },
+  "test": "react-scripts test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
