@@ -3,24 +3,24 @@ import s from './User.module.css'
 import {NavLink} from "react-router-dom";
 import {usersAPI} from "../../../api/api";
 
-const User = (props) => {
+const User = ({id, photos, followed, followingInProgress, unfollow, follow, name, status, location}) => {
     return <section>
         <div>
-            <NavLink to={'/profile/' + props.id}>
-                <img className={s.image} src={props.photos}/>
+            <NavLink to={'/profile/' + id}>
+                <img className={s.image} src={photos}/>
             </NavLink>
-            {props.followed
-                ? <button disabled={props.followingInProgress.some(id => id === props.id)}
-                          onClick={() => { props.unfollow(props.id) }}>unfollow</button>
-                : <button disabled={props.followingInProgress.some(id => id === props.id)}
-                          onClick={() => { props.follow(props.id) }}>follow</button>}
+            {followed
+                ? <button disabled={followingInProgress.some(id => id === id)}
+                          onClick={() => { unfollow(id) }}>unfollow</button>
+                : <button disabled={followingInProgress.some(id => id === id)}
+                          onClick={() => { follow(id) }}>follow</button>}
         </div>
         <div>
-            <h3>{props.name}</h3>
-            <p>{props.status}</p>
+            <h3>{name}</h3>
+            <p>{status}</p>
             <div>
-                <span>{props.location}</span>
-                <span>{props.location}</span>
+                <span>{location}</span>
+                <span>{location}</span>
             </div>
         </div>
     </section>

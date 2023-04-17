@@ -2,23 +2,15 @@ import React from "react";
 import User from "./User/User";
 import userPhoto from '../../assets/images/user.jpg'
 import s from './Users.module.css';
+import Paginator from "../common/Paginator/Paginator";
 
-const Users = (props) =>  {
-        let pagesCount = Math.ceil(props.totalCount / props.pageSize);
-
-        let pages = [];
-        for (let i = 1; i <= pagesCount; i++) {
-            pages.push(i);
-        }
-
+const Users = ({currentPage, pageSize, onPageChange, totalCount, users, ...props}) =>  {
         return <div>
-            <div>
-                {pages.map((p, index) => {
-                    return <span key={index} className={`${s.link} ${props.currentPage === p && s.isActive}`}
-                                 onClick={() => props.onPageChange(p)}>{p}</span>
-                })}
-            </div>
-            {props.users.map(u => <User follow={props.follow}
+           <Paginator currentPage={currentPage}
+                      pageSize={pageSize}
+                      onPageChange={onPageChange}
+                      totalCount={totalCount}/>
+            {users.map(u => <User follow={props.follow}
                                              unfollow={props.unfollow}
                                              key={u.id}
                                              followed={u.followed}
