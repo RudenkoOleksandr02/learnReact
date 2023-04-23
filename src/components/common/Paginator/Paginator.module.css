@@ -3,4 +3,8 @@
 }
 .link {
     cursor: pointer;
+    display: inline-block;
+    border: 1px solid black;
+    padding: 1px;
+    margin: 0 1px;
 }

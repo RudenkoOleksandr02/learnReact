@@ -9,7 +9,8 @@ const Users = ({currentPage, pageSize, onPageChange, totalCount, users, ...props
            <Paginator currentPage={currentPage}
                       pageSize={pageSize}
                       onPageChange={onPageChange}
-                      totalCount={totalCount}/>
+                      totalCount={totalCount}
+                      paginationSize={15}/>
             {users.map(u => <User follow={props.follow}
                                              unfollow={props.unfollow}
                                              key={u.id}

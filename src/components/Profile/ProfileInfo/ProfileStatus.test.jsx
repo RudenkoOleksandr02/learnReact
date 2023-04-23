@@ -13,6 +13,13 @@ describe('ProfileStatus component', () => {
         // тест
         expect(instance.state.status).toBe('it-kamasutra.com');
     });
+    test('callback should be called', () => {
+        const mockCallBack = jest.fn();
+        const component = create(<ProfileStatus status={'it-kamasutra.com'} updateUserStatus={mockCallBack}/>);
+        const instance = component.getInstance();
+        instance.deactiveEditMode();
+        expect(mockCallBack.mock.calls.length).toBe(1);
+    });
     test('after creation span should be displayed', () => {
         const component = create(<ProfileStatus/>)
         const instance = component.root;
@@ -39,13 +46,6 @@ describe('ProfileStatus component', () => {
         span.props.onDoubleClick();
         let input = instance.findByType('input')
         expect(input.props.value).toBe('it-kamasutra.com')
-    });
-    test('callback should be called', () => {
-        const mockCallBack = jest.fn();
-        const component = create(<ProfileStatus status={'it-kamasutra.com'} updateUserStatus={mockCallBack}/>);
-        const instance = component.getInstance();
-        instance.deactiveEditMode();
-        expect(mockCallBack.mock.calls.length).toBe(1)
     });
 });
 
