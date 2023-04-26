@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/970.194f1304.chunk.css","mappings":"AAAA,kBACC,aACD,CACA,sBAEC,iBAAkB,CADlB,UAED","sources":["components/Profile/MyPosts/Post/Post.module.css"],"sourcesContent":[".item {\r\n\tcolor: greenyellow;\r\n}\r\n.item img {\r\n\twidth: 50px;\r\n\tborder-radius: 50%;\r\n}"],"names":[],"sourceRoot":""}
