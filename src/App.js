@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
@@ -64,11 +64,11 @@ const ContainerApp = compose(
 )(App);
 
 const SamuraiJSApp = (props) => {
-    return <BrowserRouter basename={'/'}>
+    return <HashRouter>
         <Provider store={store}>
             <ContainerApp/>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 
 export default SamuraiJSApp;
