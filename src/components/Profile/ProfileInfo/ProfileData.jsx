@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
 
-const ProfileData = ({profile: {fullName, aboutMe, lookingForAJob, lookingForAJobDescription, contacts}, goToEditMode}) => {
+const ProfileData = ({profile: {fullName, aboutMe, lookingForAJob, lookingForAJobDescription, contacts}, goToEditMode, isOwner}) => {
     return <div>
-        <button onClick={() => goToEditMode(true)}>Edit</button>
+        {isOwner && <button onClick={() => goToEditMode(true)}>Edit</button>}
         <div>
             <b>FullName:</b> {fullName}
         </div>

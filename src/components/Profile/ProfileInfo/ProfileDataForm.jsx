@@ -2,12 +2,9 @@ import React from 'react';
 import {createField} from "../../common/FormControls/FormControl";
 import {reduxForm} from "redux-form";
 
-const ProfileDataForm = ({profile, handleSubmit, error}) => {
+const ProfileDataForm = ({profile, handleSubmit, isOwner}) => {
     return <form onSubmit={handleSubmit}>
-        {error && <div>
-            {error}
-        </div>}
-        <button>Save</button>
+        {isOwner && <button>Save</button>}
         <div>
             <b>FullName:</b>
             {createField('input',
