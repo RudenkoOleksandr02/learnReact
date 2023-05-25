@@ -10,7 +10,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/jest": "^29.5.1",
+    "@types/node": "^20.2.3",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
+    "@types/redux-form": "^8.3.5",
     "axios": "^1.2.2",
+    "classnames": "^2.3.2",
+    "jasmine": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^7.2.9",
@@ -19,7 +26,8 @@
     "redux": "^4.2.0",
     "redux-form": "^8.3.9",
     "redux-thunk": "^2.4.2",
-    "reselect": "^4.1.7"
+    "reselect": "^4.1.7",
+    "typescript": "^5.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

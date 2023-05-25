@@ -7,7 +7,7 @@ import {
     setCurrentPage,
     setTotalUsersCount,
     toggleIsFetching, toggleFollowingProgress, requestUsers
-} from "../../redux/users-reducer";
+} from "../../redux/users-reducer.ts";
 import Users from "./Users";
 import Preloader from "../common/preloader/Preloader";
 import {

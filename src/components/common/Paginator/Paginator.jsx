@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import s from './Paginator.module.css';
+import cn from "classnames";
 
 const Paginator = ({totalCount, onPageChange, pageSize = 5, currentPage = 1, paginationSize = 10}) =>  {
         let pagesCount = Math.ceil(totalCount / pageSize);
@@ -18,7 +19,7 @@ const Paginator = ({totalCount, onPageChange, pageSize = 5, currentPage = 1, pag
                 <button onClick={() => setCurrentPosition(--currentPosition)}>prev</button>
             }
             {pages.filter(p => p >= firstNum && p <= lastNum).map((p, index) => {
-                    return <span key={index} className={`${s.link} ${currentPage === p && s.isActive}`}
+                    return <span key={index} className={cn({[s.isActive]: currentPage === p}, s.link)}
                                  onClick={() => onPageChange(p)}>{p}</span>
             })}
             {pages.length > lastNum &&

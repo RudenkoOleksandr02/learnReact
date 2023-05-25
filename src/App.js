@@ -13,9 +13,11 @@ import Login from "./components/Login/Login";
 import {compose} from "redux";
 import {withRouter} from "./components/common/withRouter/withRouter";
 import {connect, Provider} from "react-redux";
-import {initializeApp} from "./redux/app-reducer";
+import {initializeApp} from "./redux/app-reducer.ts";
 import Preloader from "./components/common/preloader/Preloader";
 import store from "./redux/redux-store";
+import {Navigate} from "react-router-dom";
+
 
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
 const UsersContainer = React.lazy(() => import("./components/Users/UsersContainer"));
@@ -45,6 +47,8 @@ class App extends React.Component {
                             <Route path={'/news'} element={<News/>}/>
                             <Route path={'/settings'} element={<Settings/>}/>
                             <Route path={'/login'} element={<Login/>}/>
+                            <Route path={'/'} element={<Navigate to={'/profile'}/>}/>
+                            <Route path={'*'} element={<div>404 NOT FOUND</div>}/>
                         </Routes>
                     </React.Suspense>
                 </div>
